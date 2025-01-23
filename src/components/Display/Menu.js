@@ -52,7 +52,7 @@ const MenuList = [
   {
     ButtonName: "Unique Offering",
     path: "/unique-offering",
-    endIcon: <ArrowDropDownIcon />,
+    endIcon: "",
     subMenu: [
       "Top-Line",
       "Risk Adjustment Fee Model",
@@ -76,13 +76,13 @@ export const Menu = ({ MenuOpen }) => {
     <div>
       {isResponsiveSize ? (
         <Slide
-          timeout={1200}
+          timeout={1700}
           in={MenuOpen}
           direction={"right"}
           mountOnEnter
           unmountOnExit
         >
-          <Box className="pt-28 bg-gradient-to-tl from-gray-dark to-gray-light h-screen">
+          <Box className="pt-28 bg-gradient-to-tl from-blue-0-300 to-blue-0-500 h-screen">
             <div className="grid grid-flow-row gap-2 ">
               {MenuList.map((MenuItem, i) => (
                 <Button

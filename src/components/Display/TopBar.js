@@ -10,21 +10,16 @@ import Fade from "@mui/material/Fade";
 import Tooltip from "@mui/material/Tooltip";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import { Button } from "@mui/material";
-
 import { Menu } from "./Menu";
 import WidgetsIcon from "@mui/icons-material/Widgets";
 import Logo from "Images/logo.svg";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import Grow from "@mui/material/Grow";
 
-export const TopBar = ({ setTopBarOn, MenuOpen }) => {
+export const TopBar = ({ MenuOpen, State }) => {
   var size = Size();
   const isResponsiveSize = ["XS", "SM", "MD"].includes(size);
-  const actions = [
-    { icon: <HomeIcon />, name: "Home", path: "/" },
-    { icon: <TokenIcon />, name: "Tokens", path: "/deals" },
-    { icon: <LoyaltyIcon />, name: "T Points", path: "/contact" },
-    { icon: <AccountCircleIcon />, name: "Account", path: "/login" },
-  ];
 
   const Spacer = () => {
     return (
@@ -35,7 +30,8 @@ export const TopBar = ({ setTopBarOn, MenuOpen }) => {
   };
 
   return (
-    <Fade timeout={1000} in={true}>
+    <>
+      {" "}
       <AppBar
         position="fixed"
         elevation={1}
@@ -44,9 +40,19 @@ export const TopBar = ({ setTopBarOn, MenuOpen }) => {
         {isResponsiveSize ? (
           <Toolbar>
             <Spacer />
-            <Button onClick={MenuOpen} fullWidth={false}>
-              <MenuIcon Size={"large"} style={{ color: "whitesmoke" }} />
-            </Button>
+            {State ? (
+              <Grow appear={true} in={true} timeout={800}>
+                <Button onClick={MenuOpen} fullWidth={false}>
+                  <CloseIcon Size={"large"} style={{ color: "whitesmoke" }} />
+                </Button>
+              </Grow>
+            ) : (
+              <Grow appear={true} in={true} timeout={800}>
+                <Button onClick={MenuOpen} fullWidth={false}>
+                  <MenuIcon Size={"large"} style={{ color: "whitesmoke" }} />
+                </Button>
+              </Grow>
+            )}
           </Toolbar>
         ) : (
           <Toolbar>
@@ -54,6 +60,6 @@ export const TopBar = ({ setTopBarOn, MenuOpen }) => {
           </Toolbar>
         )}
       </AppBar>
-    </Fade>
+    </>
   );
 };

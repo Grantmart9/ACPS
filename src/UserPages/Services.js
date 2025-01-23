@@ -1,12 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Size } from "media-query";
-import Fade from "@mui/material/Fade";
+import Grow from "@mui/material/Grow";
+import { Slide } from "@mui/material";
 import ServiceImage from "Images/Services.png";
-import {
-  pagetitlecolor,
-  pagebgcolor,
-  fontType,
-} from "components/Display/feutures";
 
 const ListOfServices = [
   {
@@ -37,12 +33,24 @@ export const Services = () => {
 
   return (
     <div className="block h-auto pt-1">
-      <Fade in={true} timeout={1000}>
-        <div className="block">
-          <img className="mt-16 mb-5 px-4" src={ServiceImage} />
-          {ListOfServices.map((service) => {
-            return (
-              <div className="grid grid-flow-row gap-0.5 px-4 mb-2">
+      <div className="block">
+        <Grow in={true} timeout={800}>
+          <img className="mt-16 mb-3 px-4 w-full" src={ServiceImage} />
+        </Grow>
+        <Slide in={true} timeout={1500} direction={"up"}>
+          <div
+            className="bg-gradient-to-r from-blue-0-500 to-blue-0-300 text-center justify-center mx-4 mb-2 p-2 rounded-t-md"
+            style={{ color: "whitesmoke" }}
+          >
+            The ACPS service offering is supported by a highly customizable
+            proprietary management and reporting system that provides real time
+            access to reliable information enabling effective decisions.
+          </div>
+        </Slide>
+        {ListOfServices.map((service) => {
+          return (
+            <Slide in={true} timeout={2500} direction={"up"}>
+              <div className="grid grid-flow-row gap-0.5 px-4 mb-10">
                 <div
                   style={{
                     color: "whitesmoke",
@@ -63,10 +71,10 @@ export const Services = () => {
                   ))}
                 </div>
               </div>
-            );
-          })}
-        </div>
-      </Fade>
+            </Slide>
+          );
+        })}
+      </div>
     </div>
   );
 };

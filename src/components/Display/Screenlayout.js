@@ -19,7 +19,7 @@ export const ScreenLayout = () => {
     <div>
       {isResponsiveSize ? (
         <div className="bg-gradient-to-b from-gray-light-light to-gray-light">
-          <TopBar MenuOpen={ChangeMenuState} />
+          <TopBar MenuOpen={ChangeMenuState} State={MenuOpen} />
           {MenuOpen ? (
             <div>
               <Menu MenuOpen={MenuOpen} />
