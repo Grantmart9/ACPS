@@ -5,7 +5,7 @@ const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json";
 
 export const Offering = () => {
   return (
-    <div>
+    <div className="block h-auto pt-1">
       <Fade in={true} timeout={1000}>
         <h1 className="p-2  text-gray-dark text-center justify-center font-bold text-3xl mt-16">
           Unique Offering

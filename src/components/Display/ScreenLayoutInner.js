@@ -5,7 +5,7 @@ import { Landing } from "UserPages/Landing";
 import { Offering } from "UserPages/Offering";
 import { About } from "UserPages/About";
 import { Contact } from "UserPages/Contact";
-import { Maintainance } from "UserPages/Maintainance";
+import { Maintenance } from "UserPages/Maintainance";
 
 export const ScreenLayoutInner = () => {
   return (
@@ -17,17 +17,17 @@ export const ScreenLayoutInner = () => {
         <Route path={"/services"}>
           <Services />
         </Route>
-        <Route path={"/our-uniqueness"}>
+        <Route path={"/unique-offering"}>
           <Offering />
         </Route>
-        <Route path={"about-us"}>
+        <Route path={"/about-us"}>
           <About />
         </Route>
-        <Route path={"contact-us"}>
-          <Contact />
+        <Route path={"/maintenance-help-desk"}>
+          <Maintenance />
         </Route>
-        <Route path={"maintenance-help-desk"}>
-          <Maintainance />
+        <Route path={"/contact-us"}>
+          <Contact />
         </Route>
       </Switch>
     </div>

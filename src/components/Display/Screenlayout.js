@@ -18,7 +18,7 @@ export const ScreenLayout = () => {
   return (
     <div>
       {isResponsiveSize ? (
-        <div className="bg-gradient-to-b from-gray-light-light to-gray-light">
+        <div className="bg-gradient-to-b from-blue-0-500 to-blue-0-300">
           <TopBar MenuOpen={ChangeMenuState} State={MenuOpen} />
           {MenuOpen ? (
             <div>
@@ -34,7 +34,7 @@ export const ScreenLayout = () => {
           )}
         </div>
       ) : (
-        <div className="bg-gradient-to-b from-gray-light-light to-gray-light">
+        <div className="bg-gradient-to-b from-blue-0-500 to-blue-0-300">
           <TopBar />
           <div>
             <ScreenLayoutInner />

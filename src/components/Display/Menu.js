@@ -37,7 +37,7 @@ export default function BasicSelect() {
 }
 
 const MenuList = [
-  { ButtonName: "Home", path: "/", endIcon: "" },
+  { ButtonName: "Home", path: "/home", endIcon: "" },
   {
     ButtonName: "Services",
     path: "/services",
@@ -64,6 +64,11 @@ const MenuList = [
   {
     ButtonName: "Maintenance Help Desk",
     path: "/maintenance-help-desk",
+    endIcon: "",
+  },
+  {
+    ButtonName: "Contact Us",
+    path: "/contact-us",
     endIcon: "",
   },
 ];
