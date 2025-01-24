@@ -42,7 +42,7 @@ export const Services = () => {
     <div className="block h-auto pt-4">
       <div className="block">
         <img className="mt-16 mb-3 px-4 w-full" src={ServiceImage} />
-        <Slide in={true} timeout={1200} direction={"right"}>
+        <Slide in={true} timeout={1000} direction={"up"}>
           <div
             className="bg-gradient-to-r from-blue-0-300 to-blue-0-500 text-center justify-center mx-4 mb-2 p-2 rounded-t-md"
             style={{ color: "whitesmoke" }}
@@ -56,7 +56,7 @@ export const Services = () => {
         {ListOfServices.map((service) => {
           return (
             <div className="grid grid-flow-row gap-0.5 px-4 mb-10">
-              <Slide in={true} timeout={2300} direction={"right"}>
+              <Slide in={true} timeout={1500} direction={"up"}>
                 <div>
                   <div
                     style={{
@@ -73,14 +73,14 @@ export const Services = () => {
                     style={{ color: "whitesmoke", padding: "5pt" }}
                     className="bg-gradient-to-r to-transparent rounded-b-sm  from-blue-0-500"
                   >
-                    <div className="grid grid-cols-2 gap-1">
+                    <div className="grid md:grid-cols-2 gap-1">
                       <div>
                         {service.services.map((subservice) => (
                           <div>- {subservice}</div>
                         ))}
                       </div>
                       <div className="mx-auto my-auto">
-                        <img src={service.image} width={200} />
+                        <img src={service.image} width={350} />
                       </div>
                     </div>
                   </div>

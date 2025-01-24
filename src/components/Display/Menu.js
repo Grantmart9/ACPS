@@ -81,7 +81,7 @@ export const Menu = ({ MenuOpen }) => {
     <div>
       {isResponsiveSize ? (
         <Slide
-          timeout={1700}
+          timeout={1000}
           in={MenuOpen}
           direction={"right"}
           mountOnEnter
